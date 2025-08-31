@@ -29,7 +29,7 @@ export default function PricingCTA() {
         disabled={loading}
         className="px-5 py-2.5 rounded-md bg-brand text-black shadow hover:opacity-90 disabled:opacity-60 transition"
       >
-        {loading ? 'Starting…' : 'Start membership'}
+        {loading ? 'Starting…' : 'Upgrade to Membership'}
       </button>
       {error && <p className="text-sm text-red-600">{error}</p>}
     </div>

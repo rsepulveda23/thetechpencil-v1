@@ -1,15 +1,24 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { listReports } from '@/lib/data'
 import { formatDate } from '@/lib/format'
 
 export const revalidate = 120
+
+export const metadata: Metadata = {
+  title: 'Research — The Tech Pencil',
+  description: 'Evidence‑first reports. Clear abstracts, sources, and practical takeaways.'
+}
 
 export default async function ResearchIndex() {
   const data = await listReports()
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6 font-serif">Research</h1>
+      <div className="prose dark:prose-invert">
+        <h1 className="font-serif">Research</h1>
+        <p>Deeper briefs and reports for readers who want the full picture. Read online or download. Buy one report or get access with Membership.</p>
+      </div>
       <ul className="divide-y">
         {data?.map((r: any) => (
           <li key={r.id} className="py-4">

@@ -1,16 +1,28 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import type { Metadata } from 'next'
 import { listArticles } from '@/lib/data'
 import { formatDate, readingTime } from '@/lib/format'
 
 export const revalidate = 120
+
+export const metadata: Metadata = {
+  title: 'Blog — The Tech Pencil',
+  description: 'Plain‑English explainers and how‑tos with sources and clear steps.'
+}
 
 export default async function ArticlesIndex() {
   const data = await listArticles()
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6 font-serif">Articles</h1>
+      <div className="prose dark:prose-invert">
+        <h1 className="font-serif">Blog</h1>
+        <p>Short explainers and Everyday AI how‑tos. Read a post in a few minutes, then try the steps. All posts link to sources and show dates.</p>
+      </div>
+      {(!data || data.length === 0) && (
+        <p className="mt-6 text-sm text-muted-foreground">No posts yet. Check back tomorrow or join free for the weekly email.</p>
+      )}
       <ul className="divide-y">
         {data?.map((a: any) => (
           <li key={a.id} className="py-5 flex gap-5 items-start">
@@ -26,7 +38,7 @@ export default async function ArticlesIndex() {
                 {formatDate(a.published_at)} • {readingTime(a.body_md).label}
               </p>
               {a.access === 'premium' && (
-                <span className="inline-block mt-2 text-xs rounded px-2 py-0.5 bg-brand/20 text-black">Premium</span>
+                <span className="inline-block mt-2 text-xs rounded px-2 py-0.5 bg-brand/20 text-black">Member</span>
               )}
             </div>
           </li>

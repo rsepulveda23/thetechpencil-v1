@@ -22,19 +22,24 @@ export default function Header() {
     >
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/" className="font-semibold" aria-label="TheTechPencil home">
+          <Link href="/" className="font-semibold" aria-label="The Tech Pencil home">
             <BrandWordmark />
           </Link>
           <nav aria-label="Main" className="hidden md:flex gap-5 text-sm text-muted-foreground">
-            <Link href="/articles" className="hover:underline hover:text-foreground underline-offset-4">Articles</Link>
+            <Link href="/" className="hover:underline hover:text-foreground underline-offset-4">Home</Link>
+            <Link href="/articles" className="hover:underline hover:text-foreground underline-offset-4">Blog</Link>
+            <Link href="/signals" className="hover:underline hover:text-foreground underline-offset-4">Signals</Link>
             <Link href="/research" className="hover:underline hover:text-foreground underline-offset-4">Research</Link>
-            <Link href="/pricing" className="hover:underline hover:text-foreground underline-offset-4">Pricing</Link>
+            <Link href="/clinic" className="hover:underline hover:text-foreground underline-offset-4">Clinic</Link>
+            <Link href="/community" className="hover:underline hover:text-foreground underline-offset-4">Community</Link>
+            <Link href="/methodology" className="hover:underline hover:text-foreground underline-offset-4">Methodology</Link>
             <Link href="/about" className="hover:underline hover:text-foreground underline-offset-4">About</Link>
+            <Link href="/pricing" className="hover:underline hover:text-foreground underline-offset-4">Join</Link>
           </nav>
         </div>
         <div className="flex items-center gap-3">
           <Link href="/login" className="hidden sm:inline text-sm text-muted-foreground hover:text-foreground">Sign in</Link>
-          <Link href="/pricing" className="px-3 py-1.5 rounded-md bg-brand text-white text-sm shadow hover:opacity-90">Get started</Link>
+          <Link href="/login" className="px-3 py-1.5 rounded-md bg-brand text-white text-sm shadow hover:opacity-90">Join free</Link>
           <ThemeToggle />
         </div>
       </div>

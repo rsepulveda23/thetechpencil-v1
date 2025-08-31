@@ -38,9 +38,9 @@ export default async function ArticlePage({ params }: { params: { slug: string }
       <h1>{article.title}</h1>
       {article.subhead && <p className="lead">{article.subhead}</p>}
       <p className="not-prose text-sm text-muted-foreground mt-2">
-        {formatDate(article.published_at)}
+        Published {formatDate(article.published_at)}. Updated when facts change.
         {article.body_md && <> • {readingTime(article.body_md).label}</>}
-        {isPremium && <span className="ml-2 inline-block align-middle text-xs rounded px-2 py-0.5 bg-brand/20 text-black">Premium</span>}
+        {isPremium && <span className="ml-2 inline-block align-middle text-xs rounded px-2 py-0.5 bg-brand/20 text-black">Member</span>}
       </p>
       {article.hero_url && (
         <div className="relative w-full aspect-[16/9] rounded border overflow-hidden not-prose my-4">
@@ -52,13 +52,13 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         <div className="not-prose mt-6 p-4 border rounded bg-muted/30">
           {!registered ? (
             <div>
-              <p className="mb-3">Create a free account to keep reading and join the discussion.</p>
-              <a className="underline" href="/login">Register / Sign in</a>
+              <p className="mb-3">Create a free account to join the discussion.</p>
+              <a className="underline" href="/login">Join free / Sign in</a>
             </div>
           ) : (
             <div>
-              <p className="mb-3">This is a premium article. Subscribe to unlock full access.</p>
-              <a className="underline" href="/pricing">See pricing</a>
+              <p className="mb-3">This is a member article. Upgrade to Membership to unlock full access.</p>
+              <a className="underline" href="/pricing">Upgrade to Membership</a>
             </div>
           )}
         </div>
@@ -68,6 +68,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
           <h2 className="text-lg font-semibold mb-3">Comments</h2>
           <CommentForm articleId={article.id} />
           <Comments articleId={article.id} />
+          <p className="text-xs text-muted-foreground mt-3">Tell us what was unclear or request a follow‑up in <a className="underline" href="/community">Community</a>.</p>
         </section>
       )}
     </article>
@@ -96,8 +97,9 @@ function CommentForm({ articleId }: { articleId: string }) {
   return (
     <form className="mb-4" action={`/api/comments/post`} method="post" suppressHydrationWarning>
       <input type="hidden" name="article_id" value={articleId} />
-      <textarea name="body" required maxLength={2000} className="w-full border rounded p-2" placeholder="Add a thoughtful comment" />
-      <button formAction={postComment} className="mt-2 px-3 py-1.5 rounded bg-foreground text-background">Post</button>
+      <p className="text-xs text-muted-foreground mb-1">Keep it useful and on‑topic. Sources help.</p>
+      <textarea name="body" required maxLength={2000} className="w-full border rounded p-2" placeholder="Write your comment" />
+      <button formAction={postComment} className="mt-2 px-3 py-1.5 rounded bg-foreground text-background">Post comment</button>
     </form>
   )
 }

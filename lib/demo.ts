@@ -22,7 +22,7 @@ export const demoArticles: DemoArticle[] = [
   {
     id: 'a1',
     slug: 'welcome-to-thetechpencil',
-    title: 'Welcome to TheTechPencil',
+    title: 'Welcome to The Tech Pencil',
     subhead: 'What “evidence‑first” means and how we publish',
     body_md: `We focus on first‑principles analysis with transparent sources, runnable math, and reproducible charts.\n\nIn practice, each article links to source docs and datasets. We prioritize signal over takes.\n\nHighlights:\n\n- Clear problem statements and assumptions\n- Links to papers, filings, and docs\n- Lightweight models you can audit\n\nEnjoy the journey — and hold us accountable.`,
     hero_url: '/sample/hero-1.svg',
@@ -61,4 +61,3 @@ export const demoReports: DemoReport[] = [
     published_at: new Date().toISOString(),
   },
 ]
-

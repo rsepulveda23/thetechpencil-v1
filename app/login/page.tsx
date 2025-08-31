@@ -10,7 +10,9 @@ export default async function LoginPage() {
   }
   return (
     <div className="max-w-md">
-      <h1 className="text-2xl font-bold mb-4">Sign in / Register</h1>
+      <h1 className="text-2xl font-bold mb-1">Welcome back</h1>
+      <p className="text-sm text-muted-foreground mb-1">Sign in to continue.</p>
+      <p className="text-sm text-muted-foreground mb-4">Create a free account to get started.</p>
       {process.env.DEMO_MODE === 'true' && (
         <p className="mb-3 rounded border bg-muted/30 p-3 text-sm">Demo mode is enabled. Submitting this form will take you to a mock account page.</p>
       )}
@@ -22,6 +24,7 @@ export default async function LoginPage() {
         </label>
         <button type="submit" className="px-4 py-2 rounded bg-foreground text-background">Send magic link</button>
       </form>
+      <p className="text-xs text-muted-foreground mt-3">Forgot your password? Use the magic link to sign in.</p>
     </div>
   )
 }

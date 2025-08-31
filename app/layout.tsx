@@ -7,8 +7,8 @@ import Footer from '@/components/Footer'
 import { inter, merriweather, exo } from '@/lib/fonts'
 
 export const metadata: Metadata = {
-  title: 'TheTechPencil',
-  description: 'Evidence-first tech analysis and research.',
+  title: 'The Tech Pencil',
+  description: 'Plain‑English AI guidance with sources. Evidence, odds, and what would change our mind.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
 }
 

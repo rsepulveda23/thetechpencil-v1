@@ -7,7 +7,7 @@ import { formatDate, readingTime } from '@/lib/format'
 export const revalidate = 120
 
 export const metadata: Metadata = {
-  title: 'Blog — The Tech Pencil',
+  title: 'Blog — TheTechPencil',
   description: 'Plain‑English explainers and how‑tos with sources and clear steps.'
 }
 

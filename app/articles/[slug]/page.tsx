@@ -43,7 +43,7 @@ export default async function ArticlePage({ params }: { params: { slug: string }
         {isPremium && <span className="ml-2 inline-block align-middle text-xs rounded px-2 py-0.5 bg-brand/20 text-black">Member</span>}
       </p>
       {article.hero_url && (
-        <div className="relative w-full aspect-[16/9] rounded border overflow-hidden not-prose my-4">
+        <div className="relative w-full aspect-[16/9] not-prose my-4 overflow-hidden rounded-none sm:rounded-lg border-0 sm:border shadow-sm -mx-4 sm:mx-0">
           <Image src={article.hero_url} alt="" fill className="object-cover" />
         </div>
       )}
@@ -99,7 +99,7 @@ function CommentForm({ articleId }: { articleId: string }) {
       <input type="hidden" name="article_id" value={articleId} />
       <p className="text-xs text-muted-foreground mb-1">Keep it useful and on‑topic. Sources help.</p>
       <textarea name="body" required maxLength={2000} className="w-full border rounded p-2" placeholder="Write your comment" />
-      <button formAction={postComment} className="mt-2 px-3 py-1.5 rounded bg-foreground text-background">Post comment</button>
+      <button formAction={postComment} className="mt-2 px-3 py-1.5 rounded bg-brand text-white hover:brightness-110 active:brightness-100 active:translate-y-px">Post comment</button>
     </form>
   )
 }

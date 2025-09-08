@@ -22,7 +22,7 @@ export default async function LoginPage() {
           <span className="text-sm">Email</span>
           <input type="email" name="email" required className="mt-1 w-full border rounded px-3 py-2" />
         </label>
-        <button type="submit" className="px-4 py-2 rounded bg-foreground text-background">Send magic link</button>
+        <button type="submit" className="px-4 py-2 rounded bg-brand text-white hover:brightness-110 active:brightness-100 active:translate-y-px">Send magic link</button>
       </form>
       <p className="text-xs text-muted-foreground mt-3">Forgot your password? Use the magic link to sign in.</p>
     </div>

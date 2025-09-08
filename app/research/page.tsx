@@ -6,7 +6,7 @@ import { formatDate } from '@/lib/format'
 export const revalidate = 120
 
 export const metadata: Metadata = {
-  title: 'Research — The Tech Pencil',
+  title: 'Research — TheTechPencil',
   description: 'Evidence‑first reports. Clear abstracts, sources, and practical takeaways.'
 }
 

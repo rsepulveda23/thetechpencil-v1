@@ -27,7 +27,7 @@ export default function PricingCTA() {
       <button
         onClick={start}
         disabled={loading}
-        className="px-5 py-2.5 rounded-md bg-brand text-black shadow hover:opacity-90 disabled:opacity-60 transition"
+        className="px-5 py-2.5 rounded-md bg-brand text-white shadow hover:brightness-110 active:brightness-100 active:translate-y-px disabled:opacity-60 transition"
       >
         {loading ? 'Starting…' : 'Upgrade to Membership'}
       </button>

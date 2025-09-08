@@ -9,9 +9,9 @@ export const revalidate = 300
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const report: any = await getReportBySlug(params.slug)
-  if (!report) return { title: 'Research — The Tech Pencil' }
+  if (!report) return { title: 'Research — TheTechPencil' }
   return {
-    title: `${report.title} — The Tech Pencil`,
+    title: `${report.title} — TheTechPencil`,
     description: report.summary || 'Evidence‑first reports with clear abstracts and takeaways.'
   }
 }
@@ -36,13 +36,13 @@ export default async function ReportPage({ params }: { params: { slug: string } 
           <div className="flex gap-3 mt-2">
             {demo ? (
               <>
-                <a className="px-4 py-2 rounded bg-foreground text-background" href={`/checkout/success?demo=1&type=report&slug=${report.slug}`}>Buy this report</a>
+                <a className="px-4 py-2 rounded bg-brand text-white hover:brightness-110 active:brightness-100 active:translate-y-px" href={`/checkout/success?demo=1&type=report&slug=${report.slug}`}>Buy this report</a>
                 <Link className="px-4 py-2 rounded border" href="/pricing">Get with Membership</Link>
               </>
             ) : (
               <>
                 <form action={`/api/checkout/report/${report.slug}`} method="post">
-                  <button className="px-4 py-2 rounded bg-foreground text-background">Buy this report</button>
+                  <button className="px-4 py-2 rounded bg-brand text-white hover:brightness-110 active:brightness-100 active:translate-y-px">Buy this report</button>
                 </form>
                 <Link className="px-4 py-2 rounded border" href="/pricing">Get with Membership</Link>
               </>

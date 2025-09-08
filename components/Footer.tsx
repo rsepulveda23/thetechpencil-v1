@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="border-t mt-12" role="contentinfo">
       <div className="container py-8 text-sm text-muted-foreground flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <p>
-          © <span className="font-brand font-medium text-foreground">The Tech Pencil</span>. Plain‑English AI guidance. No hype.{' '}
+          © <span className="font-brand font-medium text-foreground">TheTechPencil</span>. Plain‑English AI guidance. No hype.{' '}
           <a href="mailto:support@thetechpencil.com" className="underline">Contact: support@thetechpencil.com</a>
         </p>
         <nav aria-label="Legal" className="flex gap-4">
